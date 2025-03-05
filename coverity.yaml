@@ -1,0 +1,27 @@
+capture:
+  build:
+    build-command: dotnet build Ajit.sln
+  compiler-configuration:
+    cov-configure:
+    - - --java
+      - --xml-option=skip_file:.*Tests.*
+    - - --gcc
+      - --xml-option=skip_file:.*Tests.*
+    - - --msvc
+      - --xml-option=skip_file:.*Tests.*
+    - - --cs
+      - --xml-option=skip_file:.*Tests.*
+    - - --go
+      - --xml-option=skip_file:.*Tests.*
+    - - --vb
+      - --xml-option=skip_file:.*Tests.*
+    - - --clang
+      - --xml-option=skip_file:.*Tests.*
+    - - --dart
+      - --xml-option=skip_file:.*Tests.*
+    - - --kotlin
+      - --xml-option=skip_file:.*Tests.*
+  files:
+    exclude-regex: (node_modules|bower_components|vendor)
+analyze:
+  cov-analyze-args: []
